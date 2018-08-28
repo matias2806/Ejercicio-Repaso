@@ -22,8 +22,10 @@ int main()
     float acumuladorNeg=0;
     float realPos=0;
     float realNeg=0;
+    int diferencia;
 
     do{
+        system("cls");
         printf("Ingrese un numero del -100 al +100\n");
         setbuf(stdin, NULL);
         scanf("%d",&prueba);
@@ -41,6 +43,9 @@ int main()
         }
 
         if(prueba%2==0){
+            if (prueba ==0){
+                contadorPar--;
+            }
             contadorPar++;
         }
 
@@ -60,6 +65,8 @@ int main()
 
         }
 
+
+        diferencia=acumuladorPos + acumuladorNeg;
         printf("El contador de positivos es %d \n", contadorPos);
         printf("El contador de negativos es %d \n", contadorNeg);
         printf("El contador de ceros es %d \n", contadorCeros);
@@ -67,8 +74,9 @@ int main()
         printf("El contador de impares es %d \n", contadorImpar);
         printf("El promedio de numeros pares es %2.f \n", realPos);
         printf("El promedio de numeros pares es %2.f \n", realNeg);
+        printf("Diferencia entre positivos y negativos %d \n",diferencia);
         setbuf(stdin, NULL);
-        printf("Desea ingresar otro numero\n");
+        printf("Desea ingresar otro numero(presione 'n' para salir \n");
         scanf ("%c",&continua);
 
     }while(continua != 'n');
